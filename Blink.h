@@ -5,8 +5,8 @@ class Blink
 {
     public:
         Blink(int _pin);
-        void on(int delay);
-        void off(int delay);
+        void on(int delay_time);
+        void off(int delay_time);
     private:
         int pin;
 }
