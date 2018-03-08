@@ -9,6 +9,6 @@ class Blink
         void off(int delay_time);
     private:
         int pin;
-}
+};
 
 #endif __BLINK__
