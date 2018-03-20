@@ -1,7 +1,7 @@
 #include "ds18b20.hpp"
 #include <string>
 #include <ESP8266WiFi.h>
-#include "../ESP8266IFTTT/ESP8266IFTTT.h"
+#include "ESP8266IFTTT.h"
 
 //public function 
 bool ds18b20::initiate()
@@ -74,7 +74,7 @@ bool ds18b20::sendTemperature(float temp)
 
     if(client.connect(server, 80))
     {
-        #ifdef THINGSPEAK
+        #ifdef USE_THINKSPEAK
 
         String post = String(apiKey);
         post += "&field1=";
@@ -96,8 +96,11 @@ bool ds18b20::sendTemperature(float temp)
         delay(1000);
         #endif
 
-        #ifdef IFTTT
-        ESP8266IFTTT.trigger(,,String(temp));
+        #ifdef USE_IFTTT
+        PRINT_STATUS("WiFi Client connected\n<<temperature>>");
+        PRINT_STATUS(String(temp));
+   
+        IFTTT.trigger("receive_temperature","5aMcXUd08A0EIRin5Dg5U",String(temp),String(temp),String(temp));
         #endif
 
 
