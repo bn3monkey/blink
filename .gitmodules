@@ -1,0 +1,3 @@
+[submodule "ESP8266IFTTT"]
+	path = ESP8266IFTTT
+	url = https://github.com/bn3monkey/ESP8266IFTTT
