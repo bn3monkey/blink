@@ -4,6 +4,9 @@
 #define PRINT_ERROR(msg) Serial.println(msg);
 #define PRINT_STATUS(msg) Serial.println(msg);
 
+//#define THINGSPEAK
+#define IFTTT
+
 class ds18b20
 {
     public:
