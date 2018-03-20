@@ -33,7 +33,10 @@ bool ds18b20::initiate()
 
 bool ds18b20::send(int sec)
 {
+    pSensor->requestTemperatures();
     float temperature = pSensor->getTempCByIndex(0);
+    //PRINT_STATUS(String("temperature : ") + String(temperature));
+    
     if(WiFi.status() == WL_CONNECTED)
         sendTemperature(temperature);
     else
@@ -81,7 +84,21 @@ bool ds18b20::sendTemperature(float temp)
         client.print("Host: api.thingspeak.com\n");
         client.print("Connection: close\n");
         client.print("X-THINGSPEAKAPIKEY: " + String(apiKey) + "\n");
-        client.print("Content-Type: application/x-www-form-urlencoded\n");
+        client.print("Content-Type: .0
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        \n");
         client.print("Content-Length: ");
         client.print(post.length());
         client.print("\n\n");

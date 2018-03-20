@@ -4,8 +4,8 @@
 
 ds18b20 ds(D3,
         "HW60308QQNWEIL5S",
-        "SK_WiFiGIGA6D64",
-        "1701004268");
+        "KT_WLAN_B7C5",
+        "0000004c57");
 
 
 void setup(void)
